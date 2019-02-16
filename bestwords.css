@@ -1,0 +1,24 @@
+html, body, body * {
+		direction: rtl;
+}
+
+html, body {
+		padding: 0;
+		margin: 0;
+}
+
+#search-bar {
+		padding: 5px;
+		width: calc(100% - 10px);
+		border-bottom: 2px solid black;
+}
+
+#results {
+		height: 100%;
+		overflow: hidden;
+}
+
+.nothing {
+		color: red;
+		text-align: center;
+}

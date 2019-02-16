@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="fa">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>به‌واژه</title>
+
+		<link rel="stylesheet" type="text/css" href="/bestwords.css">
+	</head>
+
+	<body>
+
+		<form id="search-form" action="" method="">
+			<div id="search-bar">
+				<input type="text"
+							 id="chars"
+							 name="chars"
+							 required="required"
+							 minlength="3"
+							 placeholder="چه حروفی داری؟"
+							 title="چه حروفی داری؟">
+
+				<input type="submit" id="find" value="بیاب!">
+			</div>
+		</form>
+
+		<h2 class="nothing" style="display: none">هیچی</h2>
+		
+		<ul id="results"></ul>
+
+		<script type="text/javascript" src="/jquery.min.js"></script>
+		<script type="text/javascript" src="/words.js"></script>
+		<script type="text/javascript" src="/bestwords.js"></script>
+	</body>
+
+</html>
