@@ -2,7 +2,7 @@
 
 jQuery(function($, undefined) {
 	'use strict';
-	
+
 	var words = window.words;
 	var MAX_RESULTS = 100;
 	var ALTS = [
@@ -35,7 +35,7 @@ jQuery(function($, undefined) {
 			rpl: 'ریال'
 		},
 	];
-	
+
 	var app = {
 
 		convertArabicCharsToPersian: function(str) {
@@ -57,17 +57,16 @@ jQuery(function($, undefined) {
 		},
 
 		li: function(text) {
-			return '<li>' + text + '</li>';
+			return '<p class="chip white-text green darken-4">' + text + '</p>';
 		},
 
 		showResults: function(results) {
 			if (!results || !results.length) {
-				app.$nothing.show();
+                M.toast({html: 'هیچی', classes: 'red darken-3 white-text'})
 				app.$results.html('');
 				return;
 			}
-			app.$nothing.hide();
-			
+
 			var listItems = results.reduce(function(accu, word) {
 				return accu + app.li(word);
 			}, '');
@@ -111,7 +110,7 @@ jQuery(function($, undefined) {
 			}
 
 			console.log(chars);
-			
+
 			var results = app.findMatches(chars);
 			app.showResults(results);
 		},
@@ -120,11 +119,10 @@ jQuery(function($, undefined) {
 			app.$searchForm = $('#search-form');
 			app.$chars = $('#chars');
 			app.$findBtn = $('#find');
-			app.$nothing = $('.nothing');
 			app.$results = $('#results');
 			app.$searchForm.submit(app.onFind);
 		},
-		
+
 	};
 
 	app.main();

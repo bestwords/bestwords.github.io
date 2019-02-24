@@ -2,38 +2,72 @@
 
 <html lang="fa">
 
-	<head>
-		<meta charset="UTF-8">
-		<title>به‌واژه</title>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>به‌واژه</title>
+    <meta name="description" content="واژه‌یاب پارسی">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.3.2.1.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/words.js"></script>
+	<script type="text/javascript" src="js/bestwords.js"></script>
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/materializertl.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<link rel="stylesheet" href="css/bestwords.css">
+</head>
 
-		<link rel="stylesheet" type="text/css" href="/bestwords.css">
-	</head>
-
-	<body>
-
-		<form id="search-form" action="" method="">
-			<div id="search-bar">
-				<input type="text"
-							 id="chars"
-							 name="chars"
-							 required="required"
-							 minlength="3"
-							 placeholder="چه حروفی داری؟"
-							 title="چه حروفی داری؟">
-
-				<input type="submit" id="find" value="بیاب!">
+<body>
+	<main>
+		<nav class="green darken-1">
+			<div class="container">
+				<div class="nav-wrapper">
+					<a href="/" class="brand-logo right">به‌واژه</a>
+				</div>
+		</nav>
+		</div>
+		<div class="row">
+			<div class="container">
+				<form class="col s12" id="search-form" action="" method="">
+					<div class="row">
+						<br><br><br>
+						<div class="input-field col s12">
+							<i class="fas fa-pen prefix"></i>
+							<input type="text" data-length="20" id="chars" name="chars">
+							<label for="chars"> چه حروفی داری؟</label>
+						</div>
+						<div class="row center">
+							<div class="col s12">
+								<button id="find" class="btn green darken-2 waves-effect waves-light" type="submit" name="action">
+									بیاب!<i class="fas fa-search left"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
-		</form>
-
-		<h2 class="nothing" style="display: none">
-			«هیچی»
-		</h2>
-		
-		<ul id="results"></ul>
-
-		<script type="text/javascript" src="/jquery.min.js"></script>
-		<script type="text/javascript" src="/words.js"></script>
-		<script type="text/javascript" src="/bestwords.js"></script>
-	</body>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="container">
+					<div id="results" class="center"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('input#chars').characterCounter();
+			});
+		</script>
+	</main>
+	<footer class="page-footer green darken-1">
+		<div class="footer-copyright green darken-1">
+			<div class="container">
+				<h5><a class="right white-text" href="https://github.com/bestwords/bestwords.github.io"><i class="fab fa-github"></i> به‌واژه پروژه‌ای آزاد بر روی گیتهاب</a></h5>
+			</div>
+		</div>
+	</footer>
+</body>
 
 </html>
